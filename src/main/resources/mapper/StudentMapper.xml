@@ -7,9 +7,20 @@
     <result column="age" property="age" jdbcType="INTEGER" />
     <result column="email" property="email" jdbcType="VARCHAR" />
   </resultMap>
+
+  <resultMap type="com.huarui.entity.Student" id="resultStudent" extends="BaseResultMap">
+    <collection property="groups" column="id" select="com.huarui.dao.StudentGroupMapper.getGroupsByStudentId"/>
+  </resultMap>
+
   <sql id="Base_Column_List" >
     id, name, age, email
   </sql>
+  <select id="getStudent" resultMap="resultStudent" parameterType="java.lang.Long">
+    SELECT *
+    FROM student
+    WHERE id=#{id}
+  </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />

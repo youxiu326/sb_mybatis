@@ -1,5 +1,7 @@
 package com.huarui.entity;
 
+import java.util.List;
+
 public class Student {
     private Long id;
 
@@ -8,6 +10,16 @@ public class Student {
     private Integer age;
 
     private String email;
+
+    private List<Group> groups;
+
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
+    }
 
     public Long getId() {
         return id;

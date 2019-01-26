@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.huarui.dao.StudentGroupMapper" >
+  <resultMap id="BaseResultMap" type="com.huarui.entity.StudentGroup" >
+    <result column="student_id" property="studentId" jdbcType="INTEGER" />
+    <result column="group_id" property="groupId" jdbcType="INTEGER" />
+  </resultMap>
+
+  <insert id="insertStudentGroup"  parameterType="com.huarui.entity.StudentGroup">
+    INSERT INTO student_group(student_id, group_id)
+    VALUES(#{studentId},#{groupId})
+  </insert>
+
+  <!-- 根据一个学生组ID,查看这个学生组下的所有学生 -->
+  <resultMap type="com.huarui.entity.Student" id="resultStudentMap_2">
+    <result property="id" column="id"/>
+    <result property="name" column="name"/>
+  </resultMap>
+
+  <select id="getStudentsByGroupId" resultMap="resultStudentMap_2" parameterType="java.lang.Integer">
+    SELECT u.*, ug.group_id
+    FROM student u, student_group ug
+    WHERE u.id=ug.student_id AND ug.group_id=#{group_id}
+  </select>
+
+  <!-- 根据一个学生ID,查看这个学生所对应的组-->
+  <resultMap type="com.huarui.entity.Group" id="resultGroupMap_2">
+    <result property="groupId" column="group_id"/>
+    <result property="groupName" column="group_name"/>
+  </resultMap>
+
+  <select id="getGroupsByStudentId" resultMap="resultGroupMap_2" parameterType="java.lang.Integer">
+    SELECT g.*, u.student_id
+    FROM group_ g, student_group u
+    WHERE g.group_id=u.group_id AND u.student_id=#{student_id}
+  </select>
+  
+  
+  <insert id="insert" parameterType="com.huarui.entity.StudentGroup" >
+    insert into student_group (student_id, group_id)
+    values (#{studentId,jdbcType=INTEGER}, #{groupId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huarui.entity.StudentGroup" >
+    insert into student_group
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="studentId != null" >
+        student_id,
+      </if>
+      <if test="groupId != null" >
+        group_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="groupId != null" >
+        #{groupId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
