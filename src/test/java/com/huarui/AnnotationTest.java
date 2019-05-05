@@ -41,4 +41,26 @@ public class AnnotationTest {
         System.out.println(result);
     }
 
+    @Test
+    public void test04(){
+        User user = userMapper.selectByIdAndPost(1);
+        System.out.println(user.getPosts());
+    }
+
+    /** 传递多个参数示例
+
+     @Select("select id, name, age, gender from my_student")
+     @Results({
+     @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+     @Result(column="class_id", property="classId", jdbcType=JdbcType.INTEGER),
+     @Result(column="{age=age,gender=gender}", property="lunch",
+     one=@One(select="com.example.demo.mapper.StudentMapper.getLunchByAgeAndGender")),
+     })
+     List<Student> selectAllAndLunch();
+
+     @Select("select name from lunch where student_age = #{age} and student_gender = #{gender}")
+     String getLunchByAgeAndGender(@Param("age") int age, @Param("gender") int gender);
+
+     */
+
 } 

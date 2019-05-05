@@ -38,4 +38,10 @@ public interface PostMapper {
 
     @Insert("insert into post (post_id, title, user_id,created) values (#{postId}, #{title}, #{userId},#{created});")
     public int addPost(@Param("postId") int postId, @Param("title") String title, @Param("userId") int userId, @Param("created") Date created);
+
+    @Select({"select * from post where user_id=#{userId}"})
+    @Results(
+            @Result(column = "post_id",property = "postId",jdbcType = JdbcType.INTEGER,id = true)
+    )
+    public List<Post> selectByUserId(Integer userId);
 }
