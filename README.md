@@ -11,4 +11,6 @@
 
 3.mybatis 注解方式增删改查
 
+注解方式参考博客:https://blog.csdn.net/cherlshall/article/details/80950150
+
 
