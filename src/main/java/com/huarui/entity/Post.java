@@ -1,8 +1,9 @@
 package com.huarui.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Post {
+public class Post implements Serializable {
     private Integer postId;
 
     private Integer userId;

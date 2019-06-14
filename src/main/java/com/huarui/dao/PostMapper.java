@@ -5,10 +5,13 @@ import com.huarui.entity.User;
 import javafx.geometry.Pos;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
-
 import java.util.Date;
 import java.util.List;
 
+/**
+ * 启用二级缓存
+ */
+@CacheNamespace(implementation = com.huarui.cache.MybatisRedisCache.class )
 public interface PostMapper {
     int deleteByPrimaryKey(Integer postId);
 

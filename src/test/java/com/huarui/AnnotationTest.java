@@ -30,7 +30,7 @@ public class AnnotationTest {
 
     @Test
     public void test02(){
-        Post post = postMapper.selectByIdAndUser(1);
+        Post post = postMapper.selectByIdAndUser(4);
         System.out.println(post);
     }
 
