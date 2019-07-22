@@ -11,7 +11,6 @@ import java.util.List;
 /**
  * 启用二级缓存
  */
-@CacheNamespace(implementation = com.huarui.cache.MybatisRedisCache.class )
 public interface PostMapper {
     int deleteByPrimaryKey(Integer postId);
 
