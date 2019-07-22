@@ -3,6 +3,7 @@ package com.huarui.dao;
 import com.huarui.entity.Student;
 
 public interface StudentMapper {
+
     int deleteByPrimaryKey(Long id);
 
     int insert(Student record);
