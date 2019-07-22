@@ -21,12 +21,6 @@
 https://blog.csdn.net/weiguang111/article/details/81626679
 <br>
 
-5.使用spring aop + 注解 解决二级缓存脏读问题
-参考开源项目: https://github.com/fengbindev/Quella
-<br>
-[https://github.com/fengbindev/Quella](https://fengbindev.github.io/Quella-docs/#/?id=_1%E5%90%AF%E7%94%A8mybatis%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98)
-https://fengbindev.github.io/Quella-docs/#/?id=_1%E5%90%AF%E7%94%A8mybatis%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98
-<br>
 
 
 
