@@ -14,13 +14,6 @@
 注解方式参考博客:https://blog.csdn.net/cherlshall/article/details/80950150
 <br>
 
-4.使用redis作为mybatis 二级缓存
-参考博客:
-<br>
-[spring boot + mybatis 用redis实现mybatis的二级缓存](https://blog.csdn.net/weiguang111/article/details/81626679)
-https://blog.csdn.net/weiguang111/article/details/81626679
-<br>
-
 
 
 
