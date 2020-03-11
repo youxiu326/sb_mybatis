@@ -58,6 +58,14 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- druid 依赖 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.10</version>
+		</dependency>
+		<!-- druid 依赖 -->
+
 	</dependencies>
 
 	<build>

@@ -15,5 +15,11 @@
 <br>
 
 
+4.druid
+
+http://localhost:8080/druid/
+admin
+admin
+
 
 
